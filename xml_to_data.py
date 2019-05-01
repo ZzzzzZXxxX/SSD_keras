@@ -39,8 +39,7 @@ class XML_preprocessor(object):
                     ymax = float(bounding_box.find('ymax').text) / height
                 bounding_box = [xmin, ymin, xmax, ymax]
                 bounding_boxes.append(bounding_box)
-                # class_name = object_tree.find('name').text
-                class_name = "q"
+                class_name = object_tree.find('name').text
                 one_hot_class = self._to_one_hot(class_name)
                 one_hot_classes.append(one_hot_class)
             image_name = root.find('filename').text
